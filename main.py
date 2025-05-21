@@ -1,17 +1,25 @@
 
-class Card:
-    def __init__(self, attack=0, health=1, pattern=('------','------','------')):
-        self.attack = attack
-        self.health = health
-        self.pattern = pattern
+from card import Card
+from board import Board
 
-    def __str__(self):
-        return f''' ______
-|{self.pattern[0]}|
-|{self.pattern[1]}|
-|{self.pattern[2]}|
-| {self.attack}  {self.health} |
-|______|'''
-    
-c = Card()
-print(c)
+
+c1 = Card(
+    attack=4,
+    health=2,
+    pattern=(
+        '-x*x--',
+        '--O-H-',    )
+)
+c2 = Card(
+    attack=3,
+    health=6,
+    pattern=(
+        '--*-//',
+        '-F-//-',
+    )
+)
+
+b = Board()
+b.player_1_cards[0] = c1
+b.player_2_cards[2] = c2
+b.print_board()
