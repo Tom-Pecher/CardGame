@@ -15,3 +15,14 @@ class Card:
           
  '''
     
+    def get_health(self):
+        return self.health
+    
+    def get_attack(self):
+        return self.attack
+    
+    def get_pattern(self):
+        return self.pattern
+    
+    def change_health(self, delta):
+        self.health += delta
